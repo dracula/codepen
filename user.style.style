@@ -1,0 +1,103 @@
+/* ==UserStyle==
+@name CodePen Dracula
+@version 0.1
+@description 🧛🏻‍♂️ Dark theme for CodePen
+@author DaSh-More
+@namespace https://github.com/Dracula
+@license MIT
+
+@homepageURL https://github.com/Dracula/CodePen
+@supportURL https://github.com/Dracula/CodePen/issues
+@updateURL https://github.com/Dracula/CodePen/raw/master/style.user.css
+
+@preprocessor stylus
+@var checkbox orange-spec-words "Use orange color for reserved words" 1
+==/UserStyle== */
+@-moz-document domain("codepen.io")
+    
+    _background = #282a36
+    current-line = #44475a
+    foreground = #f8f8f2
+    comment = #6272a4
+    _cyan = #8be9fd
+    _green = #50fa7b
+    _orange = #ffb86c
+    _pink = #ff79c6
+    _purple = #bd93f9
+    _red = #ff5555
+    _yellow = #f1fa8c
+
+
+    // html
+    #box-html
+
+        .cm-bracket
+            color foreground
+
+        .cm-attribute
+            color _green
+            
+        .cm-meta
+            color current-line
+
+    // css
+    #box-css
+    #box-html
+        
+        .cm-variable-2
+            color foreground
+    
+    
+        .cm-qualifier
+        .cm-variable-3 
+            color _green
+    
+    
+        .cm-property,
+        .cm-variable 
+            color _cyan
+    
+    
+        .cm-atom
+            if orange-spec-words
+                color _orange
+            else
+                color _purple
+
+    // js
+    #box-js
+    #box-html
+        
+        .cm-keyword
+        .cm-operator 
+            color _pink
+    
+        .cm-property 
+            color foreground
+    
+        .cm-variable-2 
+            color _orange
+    
+        .cm-atom 
+            color _purple
+    
+        .cm-def 
+            color _cyan
+
+    // general
+    [id|="box"]
+        
+        [role="presentation"]
+            color foreground
+    
+        .cm-tag 
+            color _pink
+    
+        .cm-comment 
+            color comment
+    
+        .cm-string 
+            color _yellow
+    
+        .cm-number 
+            color _purple
